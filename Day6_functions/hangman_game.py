@@ -61,7 +61,6 @@ word_list = ('ant baboon bat bear camel cat cobra '
              'swan tiger toad turkey turtle weasel whale wolf '
              'zebra ').split()
 lives = 7
-word_revealed = 0
 reveal_word = []
 user_guess = ""
 already_guessed = []
