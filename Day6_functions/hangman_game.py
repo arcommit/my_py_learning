@@ -1,65 +1,9 @@
 # lets play Hangman
 
 import random as rand
+from hangman_words import word_list
+from hangman_stages import stages, hangman_logo
 
-stages = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
-
-word_list = ('ant baboon bat bear camel cat cobra '
-             'coyote crow deer dog donkey duck eagle fox frog goat '
-             'goose hawk lion lizard llama mole monkey mouse mule '
-             'otter owl panda parrot pigeon python rabbit ram rat raven '
-             'rhino salmon seal shark sheep skunk sloth snake spider '
-             'swan tiger toad turkey turtle weasel whale wolf '
-             'zebra ').split()
 lives = 7
 reveal_word = []
 user_guess = ""
@@ -67,10 +11,12 @@ already_guessed = []
 end_of_game = False
 word_list_length = len(word_list)
 chosen_word = word_list[rand.randint(0, word_list_length - 1)]
+# easy way:  chosen_word = rand.choice(word_list)
 for _ in chosen_word:
     reveal_word.append("_")
 
-print("Lets play Hangman!!")
+print("Lets play!!")
+print(f"{hangman_logo} \n")
 print(f"Guess the word:  {reveal_word} \n")
 
 while not end_of_game:
